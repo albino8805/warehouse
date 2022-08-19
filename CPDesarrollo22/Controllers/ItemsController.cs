@@ -35,13 +35,16 @@ namespace CPDesarrollo22.Controllers
                 string url = System.Configuration.ConfigurationManager.AppSettings["wsurl"];
                 resp = cliente.PeticionesWSPost<ItemResponse>(url, "AlmacenyCompras.svc/ArticulosInventarioGrid", null);
 
-                foreach(var item in resp.Items)
-				{
-					if (!String.IsNullOrEmpty(item.Imagen))
-					{
-                        item.Imagen = ImagePathFront + "/" + item.Imagen;
+                if (resp != null)
+                {
+                    foreach (var item in resp.Items)
+                    {
+                        if (!String.IsNullOrEmpty(item.Imagen))
+                        {
+                            item.Imagen = ImagePathFront + "/" + item.Imagen;
+                        }
                     }
-				}
+                }
 
                 return Json(resp);
             }

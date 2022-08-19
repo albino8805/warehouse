@@ -11,6 +11,10 @@ $(document).ready(function () {
 	$("#itemForm").validate({
 		lang: 'sp'
 	});
+
+	$("#frmcaptura").on('hidden.bs.modal', function (e) {
+		limpiaCajas();
+	});
 });
 
 function LlenaGrid() {
@@ -253,9 +257,7 @@ function eliminar(item) {
 }
 
 function limpiaCajas() {
-	$("#txtFamily").val('');
-	$("#txtDes").val('');
-	$("#txtLine").val('');
+	$("#itemForm").trigger("reset");
 }
 
 $("#btnCerrar").click(function () {

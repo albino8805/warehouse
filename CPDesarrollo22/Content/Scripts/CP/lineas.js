@@ -7,6 +7,14 @@ var IID;  //Se usa para evaluar sí están editando o nuevo (0)
 
 $(document).ready(function () {
 	LlenaGrid();
+
+	$("#lineForm").validate({
+		lang: 'sp'
+	});
+
+	$("#frmcaptura").on('hidden.bs.modal', function (e) {
+		limpiaCajas();
+	});
 });
 
 function LlenaGrid() {

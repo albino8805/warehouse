@@ -12,6 +12,10 @@ $(document).ready(function () {
 	$("#familyForm").validate({
 		lang: 'sp'
 	});
+
+	$("#frmcaptura").on('hidden.bs.modal', function (e) {
+		limpiaCajas();
+	});
 });
 
 function LlenaGrid() {
@@ -141,9 +145,7 @@ function eliminar(family) {
 }
 
 function limpiaCajas() {
-	$("#txtFamily").val('');
-	$("#txtDes").val('');
-	$("#txtLine").val('');
+	$("#familyForm").trigger("reset");
 }
 
 $("#btnCerrar").click(function () {
