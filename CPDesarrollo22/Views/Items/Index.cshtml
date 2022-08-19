@@ -37,6 +37,10 @@
 							<label for='txtID'>ArtículosID</label>
 							<input type="number" id="txtID" class="form-control" />
 						</div>
+						<div class="col-md-4">
+							<label for='txtItem' class="form-label">Clave</label>
+							<input type="text" id="txtItem" class="form-control" maxlength="200" required />
+						</div>
 						<div class="col-md-12">
 							<label for='txtName' class="form-label">Nombre</label>
 							<input type="text" id="txtName" class="form-control" required />
@@ -56,10 +60,6 @@
 							<select id="txtSupplier" class="form-control" required>
 								<option value="">Seleccione</option>
 							</select>
-						</div>
-						<div class="col-md-4">
-							<label for='txtItem' class="form-label">Artículo</label>
-							<input type="text" id="txtItem" class="form-control" maxlength="200" required />
 						</div>
 						<div class="col-md-4">
 							<label for='txtSATKey' class="form-label">ClaveSAT</label>
@@ -201,18 +201,8 @@
 @*//Nota #1: este script es para que el datatable muestre botón de exportar a excel e inicie con 100 rows*@
 <script type="text/javascript">
 	$(document).ready(function () {
-		$('#example').DataTable({
-			lengthMenu: [
-				[100, 50, 25, 10, -1],
-				[100, 50, 25, 10, 'All'],
-			],
-			dom: 'Blfrtip',
-			buttons: [
-				'excelHtml5',
-				{
-					extend: 'spacer'
-				}
-			]
+		$('#dataGrid').DataTable({
+			language: esLanguage
 		});
 	});
 </script>

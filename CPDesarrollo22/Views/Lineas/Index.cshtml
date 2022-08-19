@@ -85,19 +85,9 @@
 @*//Nota #1: este script es para que el datatable muestre botón de exportar a excel e inicie con 100 rows*@
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#example').DataTable({
-            lengthMenu: [
-                [100, 50, 25, 10, -1],
-                [100, 50, 25, 10, 'All'],
-            ],
-            dom: 'Blfrtip',
-            buttons: [
-                'excelHtml5',
-                {
-                    extend: 'spacer'
-                }
-            ]
-        });
+		$('#example').DataTable({
+			language: esLanguage
+		});
     });
 </script>
 

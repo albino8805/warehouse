@@ -93,21 +93,9 @@
 
 @*//Nota #1: este script es para que el datatable muestre botón de exportar a excel e inicie con 100 rows*@
 <script type="text/javascript">
-
-
 	$(document).ready(function () {
-		$('#example').DataTable({
-			lengthMenu: [
-				[100, 50, 25, 10, -1],
-				[100, 50, 25, 10, 'All'],
-			],
-			dom: 'Blfrtip',
-			buttons: [
-				'excelHtml5',
-				{
-					extend: 'spacer'
-				}
-			]
+		$('#tableData').DataTable({
+			language: esLanguage
 		});
 
 
@@ -115,7 +103,8 @@
 	});
 </script>
 
-<link href="~/Content/Scripts/DataTables/jquery.dataTables.min.css" rel="stylesheet" />
+<!--<link href="~/Content/Scripts/DataTables/jquery.dataTables.min.css" rel="stylesheet" />-->
+<link href="~/Content/myTableStyle.css" rel="stylesheet" />
 <link href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css" rel="stylesheet" />
 <script src="~/Content/Scripts/DataTables/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js" type="text/javascript"></script>
@@ -124,7 +113,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js" type="text/javascript"></script>
 <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js" type="text/javascript"></script>
-<link href="~/Content/Scripts/DataTables/datatableEstilos.css" rel="stylesheet" />
+<!--<link href="~/Content/Scripts/DataTables/datatableEstilos.css" rel="stylesheet" />-->
 <script src="~/Content/Scripts/CP/families.js"></script>
 
 @*------------------------------- Captura modal ---------------------------------------*@

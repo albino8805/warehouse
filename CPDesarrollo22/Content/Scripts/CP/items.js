@@ -32,9 +32,7 @@ function LlenaGrid() {
 }
 function llenaTabla(data) {
 	//Detalle
-	$('#dataTable').DataTable({
-		language: esLanguage
-	}).rows().remove().draw();
+	$('#dataGrid').DataTable().rows().remove().draw();
 	if (data.Items !== null) {
 		for (var i = 0; i < data.Items.length; i++) {
 			var columnas = [
@@ -46,8 +44,8 @@ function llenaTabla(data) {
 				"<button class='btnEliminaDetalle' style='border:none;' onclick='eliminar(" + JSON.stringify(data.Items[i]) + ")'><img src='../Content/Imagenes/delete.svg' height='10' width='10' /></button>"
 			];
 
-			var rowIndex = $('#dataTable').dataTable().fnAddData(columnas);  //Agrega al DOM
-			var row = $('#dataTable').dataTable().fnGetNodes(rowIndex);
+			var rowIndex = $('#dataGrid').dataTable().fnAddData(columnas);  //Agrega al DOM
+			var row = $('#dataGrid').dataTable().fnGetNodes(rowIndex);
 		}
 	}
 }
@@ -201,17 +199,17 @@ function editar(item) {
 	$("#txtCharge").val(item.Costo);
 	$("#txtStockDays").val(item.DiasStock);
 	$("#chbIsKit").prop('checked', (item.Esunkit === 1) ? true : false);
-	$('#chbIsKit').bootstrapToggle((item.Activo === 1) ? 'on' : 'off');
+	$('#chbIsKit').bootstrapToggle((item.Esunkit === 1) ? 'on' : 'off');
 	$("#txtFamily").val(item.FamiliasID);
 	$("#chbHandleStock").prop('checked', (item.ManejaExistencia === 1) ? true : false);
-	$('#chbHandleStock').bootstrapToggle((item.Activo === 1) ? 'on' : 'off');
+	$('#chbHandleStock').bootstrapToggle((item.ManejaExistencia === 1) ? 'on' : 'off');
 	$("#chbHandlePetitions").prop('checked', (item.Manejapedimentos === 1) ? true : false);
-	$('#chbHandlePetitions').bootstrapToggle((item.Activo === 1) ? 'on' : 'off');
+	$('#chbHandlePetitions').bootstrapToggle((item.Manejapedimentos === 1) ? 'on' : 'off');
 	$("#txtMax").val(item.Maximo);
 	$("#txtMin").val(item.Minimo);
 	$("#txtCurrency").val(item.MonedasID);
 	$("#chbOutdated").prop('checked', (item.Obsoleto === 1) ? true : false);
-	$('#chbOutdated').bootstrapToggle((item.Activo === 1) ? 'on' : 'off');
+	$('#chbOutdated').bootstrapToggle((item.Obsoleto === 1) ? 'on' : 'off');
 	$("#txtSupplier").val(item.ProveedoresID);
 	$("#txtIEPS").val(item.PtjeIeps);
 	$("#txtIVA").val(item.PtjeIva);

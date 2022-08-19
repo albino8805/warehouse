@@ -33,9 +33,7 @@ function LlenaGrid() {
 }
 function llenaTabla(data) {
 	//Detalle
-	$('#tableData').DataTable({
-		language: esLanguage
-	}).rows().remove().draw();  //Limpia la tabla x
+	$('#tableData').DataTable().rows().remove().draw();  //Limpia la tabla x
 	for (var i = 0; i < data.Families.length; i++) {
 		var columnas = [
 			data.Families[i].Description,

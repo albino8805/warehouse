@@ -190,6 +190,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Imagenes\delete.svg" />
     <Content Include="Content\Imagenes\edit.svg" />
+    <Content Include="Content\myTableStyle.css" />
     <Content Include="Content\Scripts\CP\families.js" />
     <Content Include="Content\Scripts\CP\items.js" />
     <Content Include="Content\Scripts\DataTables\datatable.es.js" />

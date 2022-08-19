@@ -30,9 +30,7 @@ function LlenaGrid() {
 }
 function llenaTabla(data) {
 	//Detalle
-	$('#example').DataTable({
-		language: esLanguage
-	}).rows().remove().draw();  //Limpia la tabla x
+	$('#example').DataTable().rows().remove().draw();  //Limpia la tabla x
 	for (var i = 0; i < data.lineas.length; i++) {
 		var columnas = [
 			data.lineas[i].Linea,
